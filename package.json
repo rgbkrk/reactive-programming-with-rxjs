@@ -1,0 +1,19 @@
+{
+  "name": "reactive-programming-with-rxjs",
+  "version": "1.0.0",
+  "description": "Working through Reactive Programming with RxJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rgbkrk/reactive-programming-with-rxjs.git"
+  },
+  "author": "Kyle Kelley <rgbkrk@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/rgbkrk/reactive-programming-with-rxjs/issues"
+  },
+  "homepage": "https://github.com/rgbkrk/reactive-programming-with-rxjs#readme"
+}
