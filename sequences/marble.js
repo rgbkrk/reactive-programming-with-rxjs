@@ -12,3 +12,10 @@ var avg = Rx.Observable.range(0, 5)
 var subscription = avg.subscribe(x => {
   console.log('Average is: ', x);
 });
+
+Rx.Observable
+  .range(0, 5)
+  .average()
+  .subscribe(x => {
+  console.log('Average is still: ', x);
+});
