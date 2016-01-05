@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/rgbkrk/reactive-programming-with-rxjs/issues"
   },
-  "homepage": "https://github.com/rgbkrk/reactive-programming-with-rxjs#readme"
+  "homepage": "https://github.com/rgbkrk/reactive-programming-with-rxjs#readme",
+  "dependencies": {
+    "rx": "^4.0.7"
+  }
 }
