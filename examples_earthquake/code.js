@@ -1,16 +1,18 @@
-var quakes = Rx.Observable.create((observer) => {
-  window.eqfeed_callback = (response) => {
-    observer.onNext(response);
-    observer.onCompleted();
-  }
-  loadJSONP(QUAKE_URL);
-}).flatMap((dataset) => {
-  return Rx.Observable.from(dataset.features);
+var quakes = Rx.DOM.jsonpRequest({
+  url: QUAKE_URL,
+  jsonpCallback: 'eqfeed_callback',
+})
+.flatMap((dataset) => {
+  return Rx.Observable.from(dataset.response.features);
+})
+.map((quake) => {
+  return {
+    lat: quake.geometry.coordinates[1],
+    lng: quake.geometry.coordinates[0],
+    size: quake.properties.mag * 10000,
+  };
 })
 
 quakes.subscribe((quake) => {
-  var coords = quake.geometry.coordinates;
-  var size = quake.properties.mag * 10000;
-
-  L.circle([coords[1], coords[0]], size).addTo(map);
+  L.circle([quake.lat, quake.lng], quake.size).addTo(map);
 })
